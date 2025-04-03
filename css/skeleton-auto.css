@@ -62,9 +62,9 @@
     font-size: 100%; }
 
   :root {
-    --bgColor: #f51919;
-    --bgColor2: #1119f1;
-    --accentColor2: #881980;
+    --bgColor: #01F6FF;
+    --bgColor2: #01F6FF;
+    --accentColor2: #01F6FF;
     --accentColor: #FFF;
     --font: 'Roboto', sans-serif;
     --delay: .3s; }
@@ -144,7 +144,7 @@
     text-decoration: none;
   }
   a:hover {
-    color: #f5af19; }
+    color: #01F6FF; }
   
   .spacing {
     padding: 0 10px;

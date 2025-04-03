@@ -1,115 +1,69 @@
 <!DOCTYPE html>
-<html lang="lt">
-
+<html lang="en">
 <head>
-
-  <!-- Page Information
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>InfoShow LAN PARTY</title>
-  <meta name="description" content="InfoShow links!">
-  <!--<meta property="og:image" content="https://rokvaz.github.io/littlelink_AN/images/musu/infoshow.png">-->
-  <meta name="author" content="infoshow">
-
-  <!-- Mobile Specific Metas
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-  <!-- CSS
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="css/normalize.css">
-
-    <!-- Themes:
-            Auto:   css/skeleton-auto.css
-            Light:  css/skeleton-light.css
-            Dark:   css/skeleton-dark.css
-     -->
-    <link rel="stylesheet" href="css/skeleton-auto.css">
-
-    <!-- Brand Styles -->
-    <link rel="stylesheet" href="css/brands.css">
-
-
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" href="images/musu/infoshow.png">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:image" content="https://rokvaz.github.io/littlelink_AN/images/musu/an.png">
+    <meta name="author" content="infoshow">
+    <title>Anime Nights</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        button {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        button:hover {
+            background-color: #01F6FF;
+        }
+        iframe {
+            width: 100vw;
+            height: 100vh;
+            border: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+            overflow: auto;
+        }
+    </style>
 </head>
-
 <body>
 
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
-    <div class="row">
-      <div class="column" style="margin-top: 10%">
+    <button id="toggleButton">LT</button>
+    <iframe id="contentFrame"></iframe>
+    <script>
+        let currentPage = "EN";
 
-        <img src="images/musu/LanPartyLogo-01.png" class="avatar" srcset="images/musu/LanPartyLogo-01.png 2x" alt="" width="400" height="195">
+        // resetinan cache on each load because why not
+        const timestamp = new Date().getTime();
 
-        <!--<h1 role="heading">LAN PARTY</h1>-->
-        <p> </p>
-        <a class="button" href="https://www.facebook.com/events/2139846043112044" target="_blank" rel="noopener" role="button"><img class="icon" src="images/musu/icon.png" alt="">Lan Party: Underground | Event page</a><br> 
+        const iframe = document.getElementById("contentFrame");
+        iframe.src = "https://rokvaz.github.io/littlelink_LAN/en.html?t=" + timestamp;
 
-        <!-- Short Bio -->
-        <!--<p>Buy tickets:</p>
+        document.getElementById("toggleButton").addEventListener("click", function() {
+            if (currentPage === "EN") {
+                iframe.src = "https://rokvaz.github.io/littlelink_LAN/lt.html?t=" + timestamp;
+                currentPage = "LT";
+                this.textContent = "EN";
+            } else {
+                iframe.src = "https://rokvaz.github.io/littlelink_LAN/en.html?t=" + timestamp;
+                currentPage = "EN";
+                this.textContent = "LT";
+            }
+        });
+    </script>
 
-        <a class="button" href="https://fienta.com/infoshow24-lanparty-1day" target="_blank" rel="noopener" role="button"><img class="icon" src="images/musu/ticket.png" alt="">First-day tickets here! </a><br>                    
-        <a class="button" href="https://fienta.com/infoshow24-lanparty-2day" target="_blank" rel="noopener" role="button"><img class="icon" src="images/musu/ticket.png" alt="">Second-day tickets here! </a><br>            
-        <a class="button" href="https://fienta.com/infoshow24-spectator-ticket" target="_blank" rel="noopener" role="button"><img class="icon" src="images/musu/ticket.png" alt="">Spectator tickets here!</a><br>            
-
-
-        <p>Tournaments:</p>
-        <p>Day 1:</p>
-        <a class="button" href="https://bit.ly/LoLregistration" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/lol.png" alt="">League of Legends</a><br>
-        <a class="button" href="https://bit.ly/TFT24" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/tft.png" alt="">TeamFight Tactics</a><br>
-        <a class="button" href="https://bit.ly/mcLP24" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/mc.png" alt="">Minecraft</a><br>
-        <a class="button" href="https://bit.ly/TrackManiaLP24" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/track2.png" alt="">Trackmania</a><br>
-        <a class="button" href="https://bit.ly/GeoguessrLP24" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/geo.png" alt="">GeoGuesser</a><br>
-        <a class="button" href="https://forms.gle/rrx1Kd8TztgSgrXy7" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/cs2.png" alt="">Counter-Strike 2</a><br>
-        
-        <p>Day 2:</p>
-        <a class="button" href="https://bit.ly/Valorantregistration" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/valo.png" alt="">Valorant</a><br>
-        <a class="button" href="https://forms.gle/3bk842uCGe8FtP7C6" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/dota2.png" alt="">Dota 2</a><br>
-        <a class="button" href="https://forms.gle/LUF5acmhdbWu1Yc57" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/rocket.png" alt="">Rocket League</a><br>
-        <a class="button" href="https://forms.gle/8zCrADFVaguBBKZu6" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/cs16.png" alt="">Counter-Strike 1.6</a><br>
-        <a class="button" href="https://bit.ly/ARAMLP24" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/lol.png" alt="">League of Legends ARAM</a><br>
-        <a class="button" href="https://forms.gle/YtTdzeWsUExGfxSm8" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/geo.png" alt="">GeoGuesser</a><br>
-        <a class="button" href="https://bit.ly/osuLP24" target="_blank" rel="noopener" role="button"><img class="icon" src="images/game/osu.png" alt="">osu!</a><br>
-		<br>
-		<br>
-        -->
-		<p>Follow us:</p>
-		<a class="button button-instagram" href="https://www.instagram.com/infoshow.info/" target="_blank" rel="noopener" role="button"><img class="icon" src="images/icons/instagram.svg" alt="">Instagram</a><br>
-		<a class="button button-faceb" href="https://www.facebook.com/InfoShowLanParty" target="_blank" rel="noopener" role="button"><img class="icon" src="images/icons/facebook.svg" alt="">Facebook</a><br>
-		<a class="button button-yt" href="https://www.youtube.com/@ktu_infosa/videos" target="_blank" rel="noopener" role="button"><img class="icon" src="images/icons/youtube.svg" alt="">YouTube</a><br>     
-		<a class="button button-tiktok" href="https://www.tiktok.com/@infoshow.info" target="_blank" rel="noopener" role="button"><img class="icon" src="images/icons/tiktok.svg" alt="">TikTok</a><br>
-
-    <!-- <br>
-    <br>
-    <p>Take a look at our promo here!</p>
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/F-IKjKbs5R8?si=M7Nqov7umPnEunxQ"
-      title="YouTube video player" frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen allowfullscreen style="max-width: 100%; width: 100%;"></iframe>
-    <br>
-    <br> -->
-		
-     
-		<p>KTU FSA InfoSA projects:</p>
-
-
-
-        <a class="button" href="https://bit.ly/AnimeNights25" target="_blank" rel="noopener" role="button"><img class="icon" src="images/musu/icon.png" alt="">InfoShow'25 | Anime Nights</a><br> 
-		<br>
-		<br>
-		<p>InfoShow 2025. Using: <a href="https://littlelink.io" target="_blank" rel="noopener" role="button">LittleLink</a>. Theme: <a href="https://github.com/linkstackorg/sublime" target="_blank" rel="noopener" role="button">Sublime</a></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- End Document
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 </body>
-
 </html>
