@@ -1,1 +1,1 @@
-<h1>MIGRATED TO https://github.com/FSA-InfoSA/littlelink_AN</h1>
+<h1>MIGRATED TO https://github.com/FSA-InfoSA/littlelink_LAN</h1>
