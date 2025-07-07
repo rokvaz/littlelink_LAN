@@ -1,6 +1,1 @@
-# littlelink_LAN
-LANparty littlelink deploy
-<br>
-Base: https://github.com/sethcottle/littlelink
-<br>
-Theme: https://github.com/linkstackorg/sublime
+<h1>MIGRATED TO https://github.com/FSA-InfoSA/littlelink_AN</h1>
